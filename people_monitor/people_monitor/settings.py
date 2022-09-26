@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework.authtoken',
+    'rest_framework',
+
     'main',
     'network',
     'timer',
     'system',
-    'rest_framework',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -81,7 +86,7 @@ WSGI_APPLICATION = 'people_monitor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
+        'NAME': 'people',
         'USER': 'postgres',
         'PASSWORD': 'qassure@123',
         'HOST': 'localhost',
@@ -107,6 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#tokenes athentication
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+}
 
 
 # Internationalization

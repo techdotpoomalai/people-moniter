@@ -18,7 +18,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('main/', include('django.contrib.auth.urls')),
     path('main/', include('main.main_urls')),
+
     path('network/', include('network.network_urls')),
     path('system/', include('system.system_urls')),
     path('timer/', include('timer.timer_urls')),
